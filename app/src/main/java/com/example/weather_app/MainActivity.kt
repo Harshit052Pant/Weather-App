@@ -17,7 +17,8 @@ import java.text.SimpleDateFormat
 import java.util.Date
 import java.util.Locale
 
-//4de88006d14851d7fe3d6f4c785929f2
+
+
 class MainActivity : AppCompatActivity() {
 
     lateinit var binding: ActivityMainBinding
@@ -59,7 +60,7 @@ class MainActivity : AppCompatActivity() {
             .baseUrl("https://api.openweathermap.org/data/2.5/")
             .build().create(ApiInterface::class.java)
         val response =
-            retrofit.getWeatherData(city_name, "4de88006d14851d7fe3d6f4c785929f2", "metric")
+            retrofit.getWeatherData(city_name, "id", "metric")
         response.enqueue(object : Callback<WeatherApp> {
             override fun onResponse(call: Call<WeatherApp>, response: Response<WeatherApp>) {
                 val responseBody = response.body()
